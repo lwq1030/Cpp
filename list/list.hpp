@@ -10,24 +10,27 @@
 #define list_hpp
 
 #include <stdio.h>
+#include "node.hpp"
 class List{
 public:
-    List(int size);
+    List();
     ~List();
     void ClearList();
     bool ListEmpty();
     int ListLength();
-    bool GetElem(int i,int *e);
-    int LocateElem(int *e);
-    bool PriorElem(int *currentElem,int *preElem);
-    bool NextElem(int *currentElem,int *NextElem);
+    bool GetElem(int i,Node *pNode);
+    int LocateElem(Node *pNode);
+    bool PriorElem(Node *pCurrentNode,Node *pNode);
+    bool NextElem(Node *pCurrentNode,Node *pNode);
     void ListTraverse();
-    bool ListInsert(int i,int *e);
-    bool ListDelete(int i,int *e);
+    bool ListInsert(int i,Node *pNode);
+    bool ListDelete(int i,Node *pNode);
+    bool ListInsertHead(Node *pNode);
+    bool ListInsertTail(Node *pNode);
     
 private:
-    int *m_pList;
-    int m_iSize;
+    Node *m_pList;
+    //int m_iSize;
     int m_iLength;
 };
 

@@ -9,17 +9,26 @@
 #include "list.hpp"
 #include<iostream>
 using namespace std;
-List::List(int size){
-    m_iSize=size;
-    m_pList=new int[m_iSize];
+List::List(){
+   // m_iSize=size;
+    m_pList=new Node;
+    m_pList->data=0;
+    m_pList->next=NULL;//头节点
     m_iLength=0;
 }
 List::~List(){
-    delete []m_pList;
+    ClearList();
+    delete m_pList;
     m_pList=NULL;
 }
 void List::ClearList(){
-    m_iLength=0;
+    Node *currentNode=m_pList->next;
+    while (currentNode!=NULL) {
+        Node *temp=currentNode->next;
+        delete currentNode;
+        currentNode=temp;
+    }
+    m_pList->next=NULL;
 }
 bool List::ListEmpty(){
     if(m_iLength==0) return true;
@@ -29,53 +38,110 @@ bool List::ListEmpty(){
 int List::ListLength(){
     return m_iLength;
 }
-bool List::GetElem(int i, int *e){
-    if(i<0||i>m_iSize) return false;
-    *e=m_pList[i];
-    return true;
-}
-int List::LocateElem(int *e){
-    for(int i=0;i<m_iLength;i++){
-        if(m_pList[i]==*e) return i;
-    }
-    return -1;
-}
-bool List::PriorElem(int *currentElem, int *preElem){
-   int temp=LocateElem(currentElem);
-    if(temp==-1) return false;
-    else{
-        if(temp==0) return false;
-        else *preElem=m_pList[temp-1];
-    }
-    return 0;
-}
-bool List::NextElem(int *currentElem,int *NextElem){
-    int temp=LocateElem(currentElem);
-    if(temp==-1) return false;
-    else{
-        if(temp==m_iLength-1) return false;
-        else *NextElem=m_pList[temp-1];
-    }
-    return 0;
-}
-void List::ListTraverse(){
-    for (int i=0;i<m_iLength;i++){
-        cout<<m_pList[i]<<endl;
-    }
-}
-bool List::ListInsert(int i, int *e){
-    if(i<0||i>m_iLength) return false;
-    for(int k=m_iLength-1;k>=i;k--){
-        m_pList[k+1]=m_pList[k];
-    }
-    m_pList[i]=*e;
+bool List::ListInsertHead(Node *pNode){
+    Node *temp=m_pList->next;
+    Node *newNode=new Node;
+    if(newNode==NULL) return false;
+    newNode->data=pNode->data;
+    m_pList->next=newNode;
+    newNode->next=temp;
     m_iLength++;
     return true;
 }
-bool List::ListDelete(int i, int *e){
+bool List::ListInsertTail(Node *pNode){
+    Node *currentNode=m_pList;
+    while(currentNode->next!=NULL){
+        currentNode=currentNode->next;
+    }
+    Node *newNode=new Node;
+    if(newNode==NULL) return false;
+    newNode->data=pNode->data;
+    newNode->next=NULL;
+    currentNode->next=newNode;
+    m_iLength++;
+    return true;
+}
+bool List::ListInsert(int i, Node *pNode){
+    if(i<0|i>m_iLength) return false;
+    Node *currentNode=m_pList;
+    for(int k=0;k<i;k++){
+        currentNode=currentNode->next;
+    }
+    Node *newNode=new Node;
+    if(newNode==NULL) return false;
+    newNode->data=pNode->data;
+    newNode->next=currentNode->next;
+    currentNode->next=newNode;
+    return true;
+}
+bool List::GetElem(int i, Node *pNode){
     if(i<0||i>=m_iLength) return false;
-    *e=m_pList[i];
-    for(int k=i+1;k<m_iLength;k++) m_pList[k-1]=m_pList[k];
+    Node *currentNode=m_pList;
+    Node *currentNodeBefore=NULL;
+    for(int k=0;k<=i;k++){
+        currentNodeBefore=currentNode;
+        currentNode=currentNode->next;
+    }
+    pNode->data=currentNode->data;
+    return true;
+}
+int List::LocateElem(Node *pNode){
+    Node *currentNode=m_pList;
+    int count=0;
+    while(currentNode->next!=NULL){
+        currentNode=currentNode->next;
+        if(currentNode->data==pNode->data){
+            return count;
+        }
+        count++;
+    }
+    return -1;
+}
+bool List::PriorElem(Node *pCurrentNode, Node *pPreNode){
+    Node *currentNode=m_pList;
+    Node *tempNode=NULL;
+    while(currentNode->next!=NULL){
+        tempNode=currentNode;
+        currentNode=currentNode->next;
+        if(currentNode->data==pCurrentNode->data){
+            if(tempNode==m_pList) return false;
+            pPreNode->data=tempNode->data;
+            return true;
+    }
+}
+    return false;
+}
+bool List::NextElem(Node *pCurrentNode, Node *pNextNode){
+    Node *currentNode=m_pList;
+    while(currentNode->next!=NULL){
+        currentNode=currentNode->next;
+        if(currentNode->data==pCurrentNode->data){
+            if(currentNode->next==NULL) return false;
+            pNextNode->data=currentNode->next->data;
+            return true;
+        }
+    }
+    return false;
+}
+bool List::ListDelete(int i, Node *pNode){
+    if(i<0||i>=m_iLength) return false;
+    Node *currentNode=m_pList;
+    Node *currentNodeBefore=NULL;
+    for(int k=0;k<=i;k++){
+        currentNodeBefore=currentNode;
+        currentNode=currentNode->next;
+    }
+    currentNodeBefore->next=currentNode->next;
+    pNode->data=currentNode->data;
+    delete currentNode;
+    currentNode=NULL;
     m_iLength--;
     return true;
+}
+void List::ListTraverse(){
+    Node *currentNode=m_pList;
+    while(currentNode->next!=NULL){
+        currentNode=currentNode->next;
+        currentNode->printNode();
+    }
 }

@@ -8,10 +8,15 @@
 
 #include <stdio.h>
 #include"list.hpp"
+#include<iostream>
+using namespace std;
 int main(void){
-    int e1=3;
-    List *list1=new List(10);
-    list1->ListInsert(0, &e1);
-    list1->ListTraverse();
-    delete list1;
+    Node node1;
+    node1.data=3;
+    List *pList=new List();
+    pList->ListInsertHead(&node1);
+    
+    delete pList;
+    pList=NULL;
+    
 }
