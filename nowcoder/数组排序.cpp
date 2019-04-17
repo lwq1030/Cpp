@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <vector>
-#include <math.h>
+#include <algorithm>
 using namespace std;
 class Solution{
 public:
