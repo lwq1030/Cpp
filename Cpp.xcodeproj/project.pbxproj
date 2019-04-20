@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A26B95E7225ED8080068930F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26B95E6225ED8080068930F /* main.cpp */; };
+		A211722F226B48440069B228 /* 移位操作.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A211722E226B48440069B228 /* 移位操作.cpp */; };
+		A24626332264705300D0FA25 /* 链表从尾到头返回.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24626322264705300D0FA25 /* 链表从尾到头返回.cpp */; };
+		A246263522649B9500D0FA25 /* 两个栈实现队列出栈入栈.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A246263422649B9500D0FA25 /* 两个栈实现队列出栈入栈.cpp */; };
+		A24626372266D0D200D0FA25 /* 数组排序.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24626362266D0D200D0FA25 /* 数组排序.cpp */; };
+		A246263A2266D7C300D0FA25 /* 斐波那契数列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A24626392266D7C300D0FA25 /* 斐波那契数列.cpp */; };
+		A246263C2266DC9000D0FA25 /* 递归.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A246263B2266DC9000D0FA25 /* 递归.cpp */; };
+		A26B95F6225ED9AC0068930F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26B95F3225ED9AC0068930F /* main.cpp */; };
+		A26B95F7225ED9AC0068930F /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26B95F4225ED9AC0068930F /* list.cpp */; };
+		A26B95FB225EDAAE0068930F /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26B95F9225EDAAE0068930F /* stack.cpp */; };
+		A26B95FE225F4E4E0068930F /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A26B95FC225F4E4E0068930F /* node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +32,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A211722E226B48440069B228 /* 移位操作.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "移位操作.cpp"; sourceTree = "<group>"; };
+		A24626322264705300D0FA25 /* 链表从尾到头返回.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "链表从尾到头返回.cpp"; sourceTree = "<group>"; };
+		A246263422649B9500D0FA25 /* 两个栈实现队列出栈入栈.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "两个栈实现队列出栈入栈.cpp"; sourceTree = "<group>"; };
+		A24626362266D0D200D0FA25 /* 数组排序.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "数组排序.cpp"; sourceTree = "<group>"; };
+		A24626392266D7C300D0FA25 /* 斐波那契数列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "斐波那契数列.cpp"; sourceTree = "<group>"; };
+		A246263B2266DC9000D0FA25 /* 递归.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "递归.cpp"; sourceTree = "<group>"; };
 		A26B95E3225ED8080068930F /* Cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cpp; sourceTree = BUILT_PRODUCTS_DIR; };
-		A26B95E6225ED8080068930F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A26B95F3225ED9AC0068930F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A26B95F4225ED9AC0068930F /* list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = list.cpp; sourceTree = "<group>"; };
+		A26B95F5225ED9AC0068930F /* list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = list.hpp; sourceTree = "<group>"; };
+		A26B95F9225EDAAE0068930F /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stack.cpp; sourceTree = "<group>"; };
+		A26B95FA225EDAAE0068930F /* stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = stack.hpp; sourceTree = "<group>"; };
+		A26B95FC225F4E4E0068930F /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
+		A26B95FD225F4E4E0068930F /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,11 +59,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A24626312264701B00D0FA25 /* nowcoder */ = {
+			isa = PBXGroup;
+			children = (
+				A24626322264705300D0FA25 /* 链表从尾到头返回.cpp */,
+				A246263422649B9500D0FA25 /* 两个栈实现队列出栈入栈.cpp */,
+				A24626362266D0D200D0FA25 /* 数组排序.cpp */,
+				A24626392266D7C300D0FA25 /* 斐波那契数列.cpp */,
+				A246263B2266DC9000D0FA25 /* 递归.cpp */,
+				A211722E226B48440069B228 /* 移位操作.cpp */,
+			);
+			path = nowcoder;
+			sourceTree = "<group>";
+		};
 		A26B95DA225ED8080068930F = {
 			isa = PBXGroup;
 			children = (
-				A26B95E5225ED8080068930F /* Cpp */,
+				A24626312264701B00D0FA25 /* nowcoder */,
+				A26B95F8225EDA910068930F /* stack */,
+				A26B95ED225ED8420068930F /* list */,
 				A26B95E4225ED8080068930F /* Products */,
+				A26B95F3225ED9AC0068930F /* main.cpp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +91,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A26B95E5225ED8080068930F /* Cpp */ = {
+		A26B95ED225ED8420068930F /* list */ = {
 			isa = PBXGroup;
 			children = (
-				A26B95E6225ED8080068930F /* main.cpp */,
+				A26B95F4225ED9AC0068930F /* list.cpp */,
+				A26B95F5225ED9AC0068930F /* list.hpp */,
+				A26B95FC225F4E4E0068930F /* node.cpp */,
+				A26B95FD225F4E4E0068930F /* node.hpp */,
 			);
-			path = Cpp;
+			path = list;
+			sourceTree = "<group>";
+		};
+		A26B95F8225EDA910068930F /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				A26B95F9225EDAAE0068930F /* stack.cpp */,
+				A26B95FA225EDAAE0068930F /* stack.hpp */,
+			);
+			path = stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +167,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26B95E7225ED8080068930F /* main.cpp in Sources */,
+				A246263A2266D7C300D0FA25 /* 斐波那契数列.cpp in Sources */,
+				A26B95F6225ED9AC0068930F /* main.cpp in Sources */,
+				A246263522649B9500D0FA25 /* 两个栈实现队列出栈入栈.cpp in Sources */,
+				A246263C2266DC9000D0FA25 /* 递归.cpp in Sources */,
+				A24626332264705300D0FA25 /* 链表从尾到头返回.cpp in Sources */,
+				A24626372266D0D200D0FA25 /* 数组排序.cpp in Sources */,
+				A26B95FB225EDAAE0068930F /* stack.cpp in Sources */,
+				A211722F226B48440069B228 /* 移位操作.cpp in Sources */,
+				A26B95F7225ED9AC0068930F /* list.cpp in Sources */,
+				A26B95FE225F4E4E0068930F /* node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

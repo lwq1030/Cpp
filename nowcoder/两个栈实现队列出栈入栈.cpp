@@ -1,13 +1,16 @@
+
 //
 //  两个栈实现队列出栈入栈.cpp
 //  Cpp
-//
+//  love YH
 //  Created by 李文祺 on 2019/4/15.
 //  Copyright © 2019 李文祺. All rights reserved.
 //
 
 #include <stdio.h>
 #include <iostream>
+#include <stack>
+using namespace std;
 class Solution{
 public:
     void push(int node){

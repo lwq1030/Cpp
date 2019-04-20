@@ -1,7 +1,7 @@
 //
 //  递归.cpp
 //  Cpp
-//
+//  love YH
 //  Created by 李文祺 on 2019/4/17.
 //  Copyright © 2019 李文祺. All rights reserved.
 //
@@ -32,7 +32,7 @@ public:
 //2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法
 class Sulution2{
     int rectCover(int number){
-        int f1=1,f2=2,fn;
+        int f1=1,f2=2,fn=0;
         if(number==0) return 0;
         if(number==1) return 1;
         if(number==2) return 2;
