@@ -17,8 +17,23 @@ public:
         }
         return count;
     }
+    int Function1(int n){
+        int count=0;
+        while(n){
+            if(n&1) count++;
+            n=n>>1;
+        }
+        return count;
+    }
+    int f2(int n) {
+        int num = 0;
+        unsigned int flag = 1;
+        while(flag) {
+            if(n & flag)
+                num++ ;
+            flag <<= 1;
+        }
+        return num;
+    }
     
 }s;
-int main(){
-    s.Function(4);
-}
